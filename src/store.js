@@ -1,8 +1,12 @@
-import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from './features/counter/counterSlice';
-
-export const store = configureStore({
-  reducer: {
-    counter: counterReducer,
-  },
-});
+import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
+import {RootReducer} from "./features/"
+export const configureAppStore = () => {
+  const store = configureStore({
+    reducer: RootReducer,
+    middleware: [...getDefaultMiddleware()],
+  });
+  // if (process.env.NODE_ENV !== "production" && module.hot) {
+  //   module.hot.accept("./reducers", () => store.replaceReducer({}));
+  // }
+  return store;
+};
