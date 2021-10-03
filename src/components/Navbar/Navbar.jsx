@@ -1,17 +1,17 @@
 import '../../Styles/index.css';
 import logo from '../../assets/image/gallery/logo.png'
-
+import { BrowserRouter, Route, Link } from "react-router-dom";
 const Navbar = () => {
     return (
         <>
            <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top py-3 d-block" data-navbar-on-scroll="data-navbar-on-scroll">
-        <div class="container"><a class="navbar-brand d-inline-flex" href="index.html"><img class="d-inline-block" src={logo} alt="logo" /><span class="text-1000 fs-0 fw-bold ms-2">Mat</span></a>
+        <div class="container"><Link to="/" class="navbar-brand d-inline-flex" ><img class="d-inline-block" src={logo} alt="logo" /><span class="text-1000 fs-0 fw-bold ms-2">Mat</span></Link>
           <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
           <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item px-2"><a class="nav-link fw-medium active" aria-current="page" href="#categoryWomen">Productes</a></li>
-              <li class="nav-item px-2"><a class="nav-link fw-medium" href="#collection">Collection</a></li>
-              <li class="nav-item px-2"><a class="nav-link fw-medium" href="#outlet">Outlet</a></li>
+              <li class="nav-item px-2"><Link to="/AllProductPage" class="nav-link fw-medium active" aria-current="page" href="#categoryWomen">Productes</Link></li>
+              <li class="nav-item px-2"><Link class="nav-link fw-medium" href="#collection">Collection</Link></li>
+              <li class="nav-item px-2"><Link class="nav-link fw-medium" href="#outlet">Outlet</Link></li>
             </ul>
             <form class="d-flex"><a class="text-1000" href="#!">
                 <svg class="feather feather-phone me-3" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
