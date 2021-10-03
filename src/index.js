@@ -4,6 +4,7 @@ import App from './App';
 import { configureAppStore } from './store';
 import { Provider } from 'react-redux';
 
+// Amr
 
 ReactDOM.render(
   <React.StrictMode>
