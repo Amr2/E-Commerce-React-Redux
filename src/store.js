@@ -3,7 +3,7 @@ import {RootReducer} from "./features/"
 export const configureAppStore = () => {
   const store = configureStore({
     reducer: RootReducer,
-    middleware: [...getDefaultMiddleware()],
+    middleware: [...getDefaultMiddleware({serializableCheck:false})],
   });
   // if (process.env.NODE_ENV !== "production" && module.hot) {
   //   module.hot.accept("./reducers", () => store.replaceReducer({}));
