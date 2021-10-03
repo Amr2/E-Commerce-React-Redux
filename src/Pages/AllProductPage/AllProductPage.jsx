@@ -1,4 +1,5 @@
 import '../../Styles/index.css';
+import '../../Styles/allproduct.css';
 import shirt1 from '../../assets/image/gallery/shirt-1.png'
 import shirt2 from '../../assets/image/gallery/shirt-2.png'
 import shirt3 from '../../assets/image/gallery/shirt-3.png'
@@ -101,8 +102,9 @@ const AllProductPage = () => {
                                     <div class="card-img-overlay ps-0"> </div>
                                     <div class="card-body ps-0 bg-200">
                                       <h5 class="fw-bold text-1000 text-truncate">Gray Shirt</h5>
-                                      <div class="fw-bold"><span class="text-600 me-2 text-decoration-line-through">$200</span><span class="text-primary">$175</span></div>
+                                      <div class="fw-bold"><span class="text-600 me-2 text-decoration-line-through">$200</span><span class="text-primary">$175</span> </div>
                                     </div><a class="stretched-link" href="#"></a>
+                                  
                                   </div>
                                 </div>
                                 <div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
