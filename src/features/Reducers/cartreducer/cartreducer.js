@@ -6,7 +6,7 @@ const InitState = {
     userId:  0,
     products:[],
     date : new Date().toJSON(),
-    total:0.00,
+    total:0.00
 }
 
 const CartReducer =(state = InitState , action)=>{
