@@ -1,21 +1,53 @@
 import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { StoreData } from "./features/Reducers/storereducer/StoreAction"
-import { Remove_Product,Add_Product} from "./features/Reducers/cartreducer/CartActions"
+import { useDispatch, useSelector } from "react-redux";
+import { Loading } from "./components/shared/loading/loading";
+import { StoreData } from "./features/Reducers/storereducer/StoreAction";
+import {
+  Remove_Product,
+  Add_Product,
+} from "./features/Reducers/cartreducer/CartActions";
 
 function App() {
-  const dispatcher = useDispatch(); 
-  useEffect(()=>{
-    dispatcher(StoreData())
-    dispatcher(Add_Product({productId:5,quantity:2,price:2.5}))
-    dispatcher(Add_Product({productId:5,quantity:2,price:2.5}))
-    dispatcher(Remove_Product({productId:5,quantity:2,price:2.5}))
-    dispatcher(Remove_Product({productId:5,quantity:2,price:2.5}))
-    dispatcher(Remove_Product({productId:5,quantity:2,price:2.5}))
-  },[dispatcher])
+  const dispatcher = useDispatch();
+  const { Products } = useSelector((state) => state.AllStoreData);
+  const UserCart = useSelector((state) => state.User_Cart);
+  useEffect(() => {
+    dispatcher(StoreData());
+  }, [dispatcher]);
   return (
     <div className="App">
-      <header className="App-header"></header>
+      <h1>{UserCart.total}$</h1>
+      {Products.length === 0 ? (
+        <Loading />
+      ) : (
+        Products.map((p) => (
+          <div key={p.id}>
+            <p style={{ display: "inline-block" }}>{p.title}</p>
+            <button
+              onClick={() =>
+                dispatcher(
+                  Add_Product({ productId: p.id, quantity: 1, price: p.price })
+                )
+              }
+            >
+              +
+            </button>
+            <button
+              onClick={() =>
+                dispatcher(
+                  Remove_Product({
+                    productId: p.id,
+                    quantity: 1,
+                    price: p.price,
+                  })
+                )
+              }
+            >
+              -
+            </button>
+          </div>
+        ))
+      )}
     </div>
   );
 }

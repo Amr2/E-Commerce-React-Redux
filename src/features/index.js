@@ -1,1 +1,1 @@
-export { default as RootReducer } from './Reducers/RootReducer'
+export { default as RootReducer } from "./Reducers/RootReducer";
